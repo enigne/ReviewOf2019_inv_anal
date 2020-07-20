@@ -1,0 +1,122 @@
+\documentclass{article}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{enumitem}
+
+\newcommand{\response}{\noindent{{\bf Response:} }}
+\newcommand{\agree}{\response The correction has been made. } 
+
+\newcommand{\agreeo}{\response  {\color{orange}{The correction has been made.}} }
+\newcommand{\agreet}{\response  {\color{blue}{The correction has been made.}} }
+\newcommand{\agreeth}{\response {\color{forestgreen}The correction has been made.} }
+
+\newcommand{\CG}{\response \textcolor{magenta}{Leave to CG.} }
+
+\definecolor{orange}{rgb}{1,0.5,0}
+\definecolor{forestgreen}{RGB}{34, 139, 34}
+
+\newcommand{\colorone}{orange}
+\newcommand{\colortwo}{red}
+\newcommand{\colorthree}{blue}
+
+\newcommand{\revo}{\textcolor{\colorone}}
+\newcommand{\revt}{\textcolor{\colortwo}}
+\newcommand{\revth}[1]{\noindent \textcolor{\colorthree}{{\bf Response:} #1}}
+
+\begin{document}
+
+\title{Response to the reviewer 1}
+\maketitle
+
+\section*{Summary and High Level Discussion}
+
+This paper is about using adjoint calculus to determine the sensitivity of ice sheet surface velocities and elevation to perturbations in basal friction and basal topogrophy. The ice sheet models are the full Stokes and Shallow Shelf Approximation coupled with a time-dependent advection equation for the kinematic free surface. The authors propose a few test cases with both numerical and analytic solutions to the underlying forward and adjoint equations and argue that it is necessary to include the time-dependent advection equation for the ice surface elevation into the models. The reported findings show that: 1) there is a delay in time between a perturbation at the ice base and the observation of the change in elevation, 2) a perturbation at the base in the topography has a direct effect in space at the surface above the perturbation and a perturbation in the basal friction is propagated directly to the surface in time, and 3) perturbations with long wavelength and low frequency will propagate to the surface while those of short wavelength and high frequency are damped.
+
+The topic of the paper is very interesting and it is worth publishing. However, it needs a serious revision. The content as is presented is very difficult to digest. Below I list several specific comments/recommendation.
+
+\section*{Comments}
+
+\begin{enumerate}
+    \item Introduction
+    \begin{enumerate}[label=(\alph*)]
+        \item It is not entirely clear from the introduction (and abstract) what the motivation for running a sensitivity analysis is. It would be great if the authors could motivate this study and perhaps emphasize the impact of the sensitivity study results (in the intro especially) explicitly.
+        
+        \item It would be beneficial to discuss the companion paper (Cheng and L\"otstedt, 2020) in more detail; in particular, what is the novelty in this paper compared to the previous one? If this companion paper would be useful for the reader to help him/her understand the (heavy) modeling part in this paper, it would be great to state this earlier or explicitely. Are some of the derivations in the Appendix also done in Cheng and L\"otstedt, 2020? If so, perhaps the authors don’t need to repeat these here.
+        
+        \item In lines 18-19 on page 2, I would like to suggest the following reference for the inversion for the geothermal heat flux as well: Zhu, H., Petra, N., Stadler, G., Isaac, T., Hughes, T.J.R., Ghattas, O.: “Inversion of geothermal heat flux in a thermomechanically coupled nonlinear Stokes ice sheet model”. The Cryosphere 10, 1477-1494 (2016).
+    \end{enumerate}
+
+    \item How is $h(x,t)$ initialized, i.e., how is $h0(x)$ defined?
+    
+    \item Are there any constraints on $C$ in equation (4)? For instance, does it have to be positive? From line 13 it appears so. If this is the case, how are the authors making sure that this constant stays positive during inversion?
+
+    \item How are the Dirichlet boundary conditions set/defined, i.e., how are $u_u$ and $u_d$ set?
+    
+    \item What is H in equation 7? I assume this H is the height as shown in Figure 1a, please clarify.
+    
+    \item In line 15, page 6, the authors state: “friction coefficient $C(x, t)\ge0 $, just as in the FS model. For the FS model it looks like $C > 0$, please clarify the possible equality here.
+    
+    \item Second row, page 7: It is not clear how the adjoint equations have been derived. The authors say “Lagrangian of the forward equation?” (same in line 5, page 8). Do the authors mean the Lagrangian of the optimization problem governed by this PDE? What is the optimization objective function in the Appendix?
+    
+    \item Line 9, page 7: Need to define the topography $b(x)$.
+
+    \item Line 10, page 7: Please reformulate “its forward solution . . . “, it is not clear what solution we are talking about here. Same for the adjoint.
+    
+    \item What do the authors mean by “The same forward and adjoint equations are solved both for the inverse problem and the sensitivity problem but with different forcing function $\mathcal{F}$”, does this difference is due to inversion versus sensitivity or due to the fact the the objective is different for the two? In fact it is not clear how $\mathcal{F}$ is chosen for inversion versus sensitivity study. The authors gave a few examples for $\mathcal{F}$ but did not specify if $\mathcal{F}$ is or must be different. Same statement is made in line 5 on page 11 and similarly in line 5, page 25.
+    
+    \item The last 2-3 lines on page 7 need to be explained more clearly. It sounds like there is an optimization/minimization problem solved, if so, what is the gradient? How is this optimization problem solved?
+    
+    \item How is the nonlinear Stokes solved?
+
+    \item It would be beneficial to state the Lagrangian somewhere in the main text in order to help the reader follow the derivations and given expressions. This seems to be given in A15 for the Full Stokes, perhaps this should be moved to the main text.
+
+    \item Line 16, page 9: Why do the authors consider $e^i$?
+    
+    \item The effect of the perturbations seems to be local. How do the authors choose where to induce these perturbations?
+
+    \item In general, it is difficult to follow all the variables, it would be great if the authors would remind the reader what is what. For instance I am not sure what the 'perturbation $\delta u_1$' is (in the discussion for Fig 2 on page 10), is $u_1$ perturbed, or is it the effect of the perturbation in $C$ or basal friction on the velocity component $u_1$?
+    
+    \item  Please define exactly what “variation $\delta\mathcal{F}$ of the inverse problem” means? Similarly, what does the “variation of a functional” mean (e.g., in line 3, pag. 12))? Are these directional derivatives? It would be beneficial to show the mathematical definition in general and then apply it.
+    
+    \item It is not clear how equations 22 and 23 are related.
+    
+    \item Line 9, pag 18: What do the authors mean by “The relation in (38) . . . can also be interpreted as a way to quantify the uncertainty in $u$”? Please be more precise and define mathematically what you mean by “uncertainty”. Same discussion needs more details in line 6 on page 25 and also in lines 5-6, page 3.
+    
+    \item In general, this paper is difficult to follow. Perhaps the authors can add some roadmap to the beginning of each section to guide the reader a bit through the research and findings. For instance I had to write out the sections to see how everything fits together because it got a bit impossible to navigate through so many setups and subsections. The structure seems to be the following:
+    \begin{verbatim}
+1. Introduction
+2. Ice Models
+2.1 Full Stokes
+2.2. Shallow shelf approximation.
+3. Adjoint equations
+3.1. Adjoint equations based on the FS model
+3.1.1. Time-dependent perturbations
+3.1.2. The sensitivity problem and the inverse problem.
+3.1.3. Steady state solution to the adjoint elevation equation in two dimensions.
+3.2. Shallow shelf approximation
+3.2.1. SSA in two dimensions.
+3.2.2. The two-dimensional forward steady state solution.
+3.2.3. The two-dimensional adjoint steady state solution with $F_u \neq 0$. 
+3.2.4. The two-dimensional adjoint steady state solution with $F_h \neq 0$. 
+3.2.5. The two-dimensional time dependent adjoint solution.
+    \end{verbatim}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item Sometimes the titles are not very representative or consistent, for in- stance Subsections 3.2.1 and 3.2.2 focus on forward equations and solutions eventhough Section 3.2. is called “Adjoint Equations”, this is a bit confusing. Perhaps the authors should move forward problem matters to section 2.
+        
+        \item  Also, consider creating a table that summarizes all the examples and cases, shows the similarities and differences, parameter values, etc. and then refer back to this table from the sections and text. It is difficult to see the big picture with all the small subsections and various proposed scenarios.
+
+        \item The description of adjoints and problem setups are mixed with results. I recommend separating these to the extent possible.
+
+        \item Finally, there are several modeling information and parameter values inserted in the text which makes the reading of the actual research study and findings difficult. A table that summarizes somehow all these values might help to ease the discussion.
+    \end{enumerate}
+
+
+    \item Line 1 page 25, not sure what the point of the sentence "...confirm the conclusions here and are in good agreement with the analytical solutions.” is here. Please add more details to explain.
+    
+    \item  Finally, the authors talk about sensitivity analysis, however throughout the paper the authors compute the effect of some perturbation in the parameters on some quantity of interest. To do a proper sensitivity analysis (or derive the sensitivity equations) one should look at the (total) derivative of the objective with respect to the parameter (of interest). This will give the equations to compute the sensitivity of the forward solution with respect to the parameter (or in finite dimensions to all the parameter components), etc. The authors should define clearly at the begining what they mean by “sensitivities” and how are these computed.
+
+\end{enumerate}
+\end{document}

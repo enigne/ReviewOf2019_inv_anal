@@ -1,0 +1,132 @@
+\documentclass{article}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color}
+
+\newcommand{\response}{\noindent{{\bf Response:} }}
+\newcommand{\agree}{\response The correction has been made. } 
+
+\newcommand{\agreeo}{\response  {\color{orange}{The correction has been made.}} }
+\newcommand{\agreet}{\response  {\color{blue}{The correction has been made.}} }
+\newcommand{\agreeth}{\response {\color{forestgreen}The correction has been made.} }
+
+\newcommand{\CG}{\response \textcolor{magenta}{Leave to CG.} }
+
+\definecolor{orange}{rgb}{1,0.5,0}
+\definecolor{forestgreen}{RGB}{34, 139, 34}
+
+\newcommand{\colorone}{orange}
+\newcommand{\colortwo}{red}
+\newcommand{\colorthree}{blue}
+
+\newcommand{\revo}{\textcolor{\colorone}}
+\newcommand{\revt}{\textcolor{\colortwo}}
+\newcommand{\revth}[1]{\noindent \textcolor{\colorthree}{{\bf Response:} #1}}
+
+\begin{document}
+
+\title{Response to the editor}
+\maketitle
+
+{
+Thank you for your submission to TC/TCD. 
+As you may know, papers accepted for TCD appear immediately on the web for comment and review. Before publication in TCD, all papers undergo a rapid access review undertaken by the editor and/or reviewer with the aim of providing initial quality control. It is not a full review and the key concerns are fit to the journal remit, basic quality issues and sufficient significance, originality and/or novelty to warrant publication. As a result, even a manuscript ranked highly during access review can receive a low ranking during full peer review later. Evaluation criteria are found at www.the-cryosphere.net/review/ms\_evaluation\_criteria.html. Grades are from 1 (excellent) to 4 (poor). 
+
+{ ORIGINALITY / NOVELTY (1-4): 1}
+This paper presents analytical developments to infer the sensitivity of ice sheet surface velocity and elevation to friction and topography, using adjoint equations for the Stokes and Shallow Shelf Approximation. 
+
+\revth{Thanks for the comments.}
+
+{ SCIENTIFIC QUALITY / RIGOR (1-4): 2}
+The proposed framework, using adjoint method, is rigorous. I was not able to check all the maths in the manuscript but as far as I can see, the proposed developments seem also to be rigorous. The treatment of the grounding line (is it fixed or can it move) as well as the boundary conditions on $\Gamma_d$ (a Dirichlet BC, whereas one would expect a sea water pressure, as explained at the end of the SSA model presentation) should be clarified. 
+
+\revth{There are more details of the grounding line treatment and the downstream boundary conditions in the revision. See our responses below.}
+
+{ SIGNIFICANCE / IMPACT (1-4): 2}
+There seem to be a significant number of conclusions that can be drawn from the proposed developments, but I think that the presentation could be improved so that these conclusions are written more systematically using sentences and not only mathematical relationships. At the end, the reader is a bit confused by all these maths and all sections should be ended by some practical implications of these results?
+
+\revth{More conclusions in words have been included in Sects. 3.2.3 and 4. }
+
+PRESENTATION QUALITY (1-4): 2
+The paper is globally well written even if the maths are sometime difficult to follow with quite a large number of notations. I wonder if it is of any interest to present the 2d Stokes in parallel to the 3d as I don’t really see where it is used? Also, some figures (e.g. 2) present results from a test cases which is presented in an other paper, which complicate their understanding. The present paper should be consistent or at least be more specific when referring to the test case in Cheng and L\"otstedt (2020). I have also listed some more specific remarks bellow. 
+
+\revth{The derivations of the adjoint FS and SSA equations are in 3D and are easily transferred to 2D. There are more details of the numerical example now.}
+
+All these remarks are made here in order to improve your manuscript and anticipate remarks from the reviewers. I let you decide if you want or not to account for some of them in a revised version before the paper moves to the discussion.
+
+\revth{We thank you for your review. All your comments have been taken into account in our revision.}
+}
+
+\begin{itemize}
+\item Page 1, lines 9-11: these two sentences seem contradictory (“There is a delay” ; “has a direct effect” “propagated directly”). 
+
+\revth{We have added that the direct effect is in space.}
+
+\item Page 1, lines 16-18: not sure this information about how long are ran the simulations is very relevant?
+
+\revth{We are not sure whether we understand the comment. But we think that it is justifiable to mention that projections no longer only target 2100 AD, but go beyond, and would therefore like to keep lines 16-18.}
+
+
+
+
+\item Page 2, line 7: I would prefer to use Stokes instead of full Stokes
+
+\revth{We have no strong opinions about the use of Full Stokes vs Stokes, and would give other reviewers a chance to comment on it here before we make any changes.}
+
+\item Page 2, line 8: use e.g. where the list of references is only example between many others. At least, I would had Schoof 2005 in this list to be more exhaustive
+
+\revth{Schoof 2005 is included.}
+
+\item Page 1, line 10: same as above, add e.g.
+
+\revth{Changed.}
+
+\item Page 2, line 30: I would suggest to use elevation instead of height, consistently with the title (check in all the manuscript)
+
+\revth{All changed.}
+
+\item Page 4, line 5: the definition of $zb$ and $b$ is a bit strange. Why not using $zb$ as the base of the ice and $b$ as the elevation of bedrock. Then $zb=b$ where grounded and $zb>b$ for ice-shelves?
+
+\revth{The notation is improved as suggested and also in (1).}
+
+\item Page 5, line 9: isotropic pressure
+
+\revth{Changed}
+
+\item Strictly speaking, Equations (4) are not the Stokes (or FS) equations. The Stokes equations are just the mass and momentum equations (so your 3d line). I cannot see what are the BC on $\Gamma_w$ (ice shelf bottom)?
+
+\revth{We have added `advection equation' and the boundary condition on $\Gamma_w$.}
+
+\item The boundary condition on $\Gamma_d$ should be discussed as the way you are imposing it (Dirichlet BC) is not classical. Also, imposing only Dirichlet BC over the whole contour of the domain might conduct to strange (and unphysical) solutions due to incompressibility? Why not using for the Stokes a sea water pressure condition as it is done for the SSA (Eq. (9))?
+
+\revth{This is the boundary condition also in e.g. Petra et al  2014. We can use the sea water pressure condition to compute the forward solution and then let $\mathbf u$ and ${\mathbf u}_d$ be given by that in the adjoint equation.}
+
+\item Page 8, line 10: there is a typo in the third term of the vector
+
+\agreet
+
+\item Page 10, line 14: $h$ is also influenced by SMB which has a strong seasonal variability. How it would change this conclusion which assumes a constant SMB?
+
+\revth{We have chosen to vary $C$ for the FS equations. One could also vary $a$, as you suggest, in the derivations of the adjoint equations in the appendices. The contribution of a perturbation $\delta a$ in FS will be
+\[
+   \delta{\mathcal L}=-\int_0^T\int_{\Gamma_s} \psi\, \delta a \,d{\mathbf x}\, dt
+\]
+and similarly in SSA.
+Adding $\delta a$ would not change the conclusion that there is a time delay between the perturbations in $C$ and $h$.}
+
+\item Page 10, line 17: I understand here that the GL is fix, but you are solving a transient simulation with evolving friction so that one would expect the GL to move. How much this hypothesis can change your results? How much complicated it would be to include a moving GL? This should be at least discussed?
+
+\revth{The GL is fixed only for the analytical {\bf steady state} solution of SSA in 2D in Sects. 3.2.2, 3.2.3, and 3.2.4. In Sects. 3.1.1 and 3.2.5, the GL is moving. This is written explicitly now.}
+
+\item The conclusion should be written in a more classical way and not a bullet points. 
+
+\revth{The advantage with the numbering of the conclusions in Sect. 3.2.3 is that we can refer to them in Sect 3.2.4 without repeating them. The bullets in Sect 4 are removed.}
+
+\item Page 25, line 4: it should be written in the reverse way? The mathematical developments of this paper confirm the numerical results in an already published paper?
+
+\revth{We think that the numerical results confirm that the derivations of the adjoint equations and their solutions in this paper are correct.}
+
+\end{itemize}
+
+\end{document}
